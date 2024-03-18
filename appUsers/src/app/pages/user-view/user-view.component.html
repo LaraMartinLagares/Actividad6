@@ -1,1 +1,14 @@
-<p>user-view works!</p>
+<section class="mt-5">
+    <div class="row">
+        <figure class="col-12 col-md-6 d-flex justify-content-center figura">
+            <img class="img-rounded rounded-circle pe-3 ps-3" [src]="myUser.image" [alt]="myUser.username">
+        </figure>
+        <div class="col-12 col-md-6 ps-5 pe-5 pt-5 pb-5 d-flex flex-column gap-4 texto">
+            <h2>{{myUser.first_name}}</h2>
+            <h2>{{myUser.last_name}}</h2>
+            <p><strong>Nombre Usuario: </strong>{{myUser.username}}</p>
+            <p><strong>Email: </strong>{{myUser.email}}</p>
+            <app-buttoms-bar class="mt-4 buttoms-bar" [parent]="'view'" [textDelete]="'Eliminar'" [user]="myUser"></app-buttoms-bar>
+        </div>
+    </div>
+</section>
