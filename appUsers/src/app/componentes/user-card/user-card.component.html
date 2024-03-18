@@ -1,1 +1,12 @@
-<p>user-card works!</p>
+<div class="card shadow text-center">  
+    <div class="">
+        <img [src]="myUser.image" class="img-fluid img-rounded rounded-circle px-5 pt-3" [alt]="myUser.username">
+    </div>
+    <div class="">
+        <div class="card-body">
+            <h6 class="card-title">{{myUser.first_name}} {{myUser.last_name}}</h6>
+                <!--<app-botonera [parent]="'card'" [idSerie]="miSerie._id"></app-botonera>-->
+        </div>
+        <app-buttoms-bar [parent]="'card'" [textDelete]="'Borrar'" [user]="myUser"></app-buttoms-bar>  
+    </div> 
+</div> 
