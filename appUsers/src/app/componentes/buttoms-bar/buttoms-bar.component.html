@@ -1,1 +1,26 @@
-<p>buttoms-bar works!</p>
+<div class="container-flex d-flex justify-content-between mb-3 mx-3 px-1 botonera">
+    @if(parent=== 'card'){
+        <div>
+            <a class="btn d-flex flex-column gap-3" [routerLink]="['/user', user._id]">
+                <span class="fa-solid fa-magnifying-glass icon"></span>
+                <span>Ver detalle</span>
+            </a>
+        </div>
+    }@else if(parent==='view'){
+        <div>
+            <a class="btn d-flex flex-column gap-3" [routerLink]="['/home']">
+                <span class="fa-solid fa-rotate-left icon"></span>
+                <span>Volver al listado</span>
+            </a>
+        </div>
+    }
+    <div>
+        <a class="btn d-flex flex-column gap-3" [routerLink]="['/updateuser', user._id]">
+            <span class="fa-solid fa-arrows-rotate icon"></span>
+            <span>Actualizar</span>
+        </a>
+    </div>
+    <div>
+        <app-buttom-delete [textbutton]="textDelete" [unUser]="user"></app-buttom-delete>
+    </div>
+</div>
