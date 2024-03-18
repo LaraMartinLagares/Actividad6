@@ -134,4 +134,4 @@ export class UserFormComponent {
     Swal.fire(`Usuario ${user.first_name} ${user.last_name} ha sido ${option} correctamente`);
   }
 
-}
+} 
