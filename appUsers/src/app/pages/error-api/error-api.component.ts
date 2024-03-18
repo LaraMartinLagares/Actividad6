@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-error-api',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './error-api.component.css'
 })
 export class ErrorAPIComponent {
+
+  route = inject(Router);
+
+  goHome(): void{
+    this.route.navigate(['/home']);
+  }
 
 }
