@@ -1,0 +1,32 @@
+.btn{   
+    font-size: 1vw;
+}
+
+.icon{
+    font-size: 1.5vw;
+}
+/*Poner los tamaños con medio query*/
+
+
+@media screen and (max-width: 991px){
+
+    .btn{
+        font-size: 1rem;
+    }
+
+    .icon{
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 780px){
+
+    .btn{
+        font-size: 0.9rem;
+    }
+
+    .icon{
+        font-size: 1rem;
+    }
+}
