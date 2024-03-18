@@ -1,0 +1,42 @@
+<section class="mt-5">
+    
+    <h5>{{titleForm}}</h5>
+
+    <form class="mt-4 me-5 d-flex flex-column gap-3" [formGroup]="userForm" (ngSubmit)="getDataForm()">
+        <div>
+            <label class="form-label" for="first_name">Nombre Usuario</label>
+            <input class="form-control" type="text" id="first_name" formControlName="first_name">
+            @if(checkControl('first_name', 'required')){
+                <p class="error">Campo obligatorio</p>
+            }
+        </div>
+        <div>
+            <label class="form-label" for="last_name">Apellido Usuario</label>
+            <input class="form-control" type="text" id="last_name" formControlName="last_name">
+            @if(checkControl('last_name', 'required')){
+                <p class="error">Campo obligatorio</p>
+            }
+        </div>   
+        <div>
+            <label for="email" class="form-label">Email</label>
+            <input class="form-control" type="text" id="email" formControlName="email">
+            @if(checkControl('email', 'required')){
+                <p class="error">Campo obligatorio</p>
+            }
+            @if(checkControl('email', 'emailvalidacion')){
+                <p class="error">{{userForm.get('email')?.errors?.['emailvalidacion']}}</p>
+            }
+        </div>
+        <div>
+            <label class="form-label" for="image">Imagen Usuario</label>
+            <input class="form-control" type="text" id="image" formControlName="image">
+            @if(checkControl('image', 'required')){
+                <p class="error">Campo obligatorio</p>
+            }
+            @if(checkControl('image', 'imagevalidacion')){
+                <p class="error">{{userForm.get('image')?.errors?.['imagevalidacion']}}</p>
+            }
+        </div>
+        <input type="submit" [value]="textBoton" class="btn btn-success mt-3" [disabled]="!userForm.valid">
+    </form>
+</section>
